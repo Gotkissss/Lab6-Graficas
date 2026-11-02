@@ -1,0 +1,20 @@
+[package]
+name = "planetas_shaders"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fastnoise-lite = "1.1.1"
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+minifb = "0.29.0"
+nalgebra-glm = "0.21.0"
+rayon = "1.12.0"
+tobj = "4.0.5"
+
+# El renderer corre en CPU: incluso en modo debug optimizamos para que sea fluido.
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+opt-level = 3
+lto = "thin"
