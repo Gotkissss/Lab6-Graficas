@@ -374,10 +374,6 @@ desplazan coherentemente.
 | Anillos en el gaseoso | Zephyr con anillos C/B/A, divisiones, sombras mutuas |
 | Luna en el rocoso | Selene orbita a Terra Nova |
 
-Requisitos del enunciado: estrella, rocoso y gaseoso ✔ · misma esfera para todo ✔ · color solo en
-fragment shaders, sin texturas ✔ · renderer en CPU ✔ · selección por teclas ✔ · README con capturas,
-descripciones, parámetros y videos ✔.
-
 ## Créditos
 - Ruido: [`fastnoise-lite`](https://crates.io/crates/fastnoise-lite) (OpenSimplex2 y celular).
 - Ventana: [`minifb`](https://crates.io/crates/minifb). Matemáticas: [`nalgebra-glm`](https://crates.io/crates/nalgebra-glm).
