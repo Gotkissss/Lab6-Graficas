@@ -17,12 +17,14 @@ celular/Voronoi, ondas, domain warping, máscaras e iluminación). No hay imáge
 
 ## Compilar y ejecutar
 
-Requisitos: [Rust](https://rustup.rs/) (stable, probado con 1.97). En Windows basta con `rustup`
-y las *Build Tools* de Visual Studio; en Linux, las librerías de X11 (`libx11-dev`, `libxkbcommon-dev`).
+Requisitos:
+- [Rust](https://rustup.rs/) (versión estable, probado con 1.97).
+- **Windows:** instalar Rust con `rustup` y las *Build Tools* de Visual Studio (C++).
+- **Linux:** librerías de X11 (`sudo apt install libx11-dev libxkbcommon-dev`).
 
 ```bash
-git clone <URL-de-este-repo>
-cd lab-shaders
+git clone https://github.com/Gotkissss/Lab6-Graficas.git
+cd Lab6-Graficas
 cargo run --release
 ```
 
@@ -255,7 +257,7 @@ Parámetros: `BIOME_FREQ`, `RIVER_WIDTH`, `GLOW_SPEED`.
 La esfera se aplasta con una **matriz de escala** (no se modifican los vértices) y el fragment
 shader calcula el radio `r` de cada fragmento. `density(r)` arma el perfil: borde interior y
 exterior, anillo C tenue, divisiones de Cassini (`r≈1.93`) y Encke (`r≈2.2`) y *ringlets* con senos.
-Donde la densidad es < 0.06 el fragmento se **descarta** durante la rasterización, así se ve el
+Donde la densidad es menor que 0.06 el fragmento se **descarta** durante la rasterización, así se ve el
 planeta a través de los huecos. Los anillos reciben la **sombra del planeta** (intersección del rayo
 hacia la luz con la esfera) y proyectan su **sombra sobre el planeta** (en `gas.rs`).
 *Parámetro:* `CASSINI` mueve la división principal; `INNER`/`OUTER` cambian el ancho.
